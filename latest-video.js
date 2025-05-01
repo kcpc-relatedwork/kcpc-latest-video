@@ -4,7 +4,8 @@
     .then(data => {
       const container = document.getElementById('latest-video-container');
       if (container && data.videoUrl) {
-        container.innerHTML = `
+        container.innerHTML = ''; // clear everything
+        container.innerHTML = ``
           <div class="video-wrapper">
             ${data.videoUrl}
           </div>
