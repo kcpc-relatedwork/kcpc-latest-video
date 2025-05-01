@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
         container.innerHTML = `
           <h2>${data.title}</h2>
           <p>Published at: ${new Date(data.publishedAt).toLocaleString()}</p>
-          <div class="video-wrapper">
-            ${data.videoUrl}
-          </div>
+         <div class="video-wrapper">
+            <iframe src="${data.videoUrl}" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+         </div>
         `;
       }
     })
