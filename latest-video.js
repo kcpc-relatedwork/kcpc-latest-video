@@ -3,17 +3,11 @@ fetch('https://raw.githubusercontent.com/kcpc-relatedwork/kcpc-latest-video/main
   .then(data => {
     const container = document.getElementById('latest-video-container');
     if (container && data.videoUrl) {
-      let html = '<div class="video-wrapper">' + data.videoUrl + '</div>';
-
-      if (data.title) {
-        html = `<h2>${data.title}</h2>` + html;
-      }
-      if (data.publishedAt) {
-        const formattedDate = new Date(data.publishedAt).toLocaleString();
-        html = `<p>Published at: ${formattedDate}</p>` + html;
-      }
-
-      container.innerHTML = html;
+      container.innerHTML = `
+        <div class="video-wrapper">
+          ${data.videoUrl}
+        </div>
+      `;
     }
   })
   .catch(error => {
