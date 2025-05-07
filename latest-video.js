@@ -5,7 +5,6 @@
       if (container && data.videoUrl) {
         container.innerHTML = '';
 
-        // 🎥 Inject only the video
         container.innerHTML = `
           <div class="video-wrapper">
             ${data.videoUrl}
