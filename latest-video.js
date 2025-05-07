@@ -3,6 +3,10 @@ fetch('https://raw.githubusercontent.com/kcpc-relatedwork/kcpc-latest-video/main
   .then(data => {
     const container = document.getElementById('latest-video-container');
     if (container && data.videoUrl) {
+      // Clear out any existing content
+      container.innerHTML = '';
+
+      // Insert the iframe only
       container.innerHTML = `
         <div class="video-wrapper">
           ${data.videoUrl}
